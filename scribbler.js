@@ -12,18 +12,18 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `scribbler
-            [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
+  var txt = `bitcoind -daemon
+            init message: Loading block index...
+            init message: Rewinding blocks...
+            init message: Verifying blocks...
 
-            ###todo for new year dinner party
-
-            - milk
-            - butter
-            - green onion
-            - lots and lots of kiwis 🥝`;
+            Verifying last 6 blocks at level 3
+            [0%]...[16%]...[33%]...[50%]...[66%]...[83%]...[99%]...[DONE].
+            No coin database inconsistencies in last 6 blocks (14279 transactions)
+            New outbound peers connected ₿`;
   var speed = 60;
 
-  function typeItOut () {
+  function typeItOut() {
     if (i < txt.length) {
       document.getElementsByClassName('demo')[0].innerHTML += txt.charAt(i);
       i++;
@@ -35,7 +35,7 @@ if (document.getElementsByClassName('demo').length > 0) {
 }
 
 // toggle tabs on codeblock
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   // get all tab_containers in the document
   var tabContainers = getAll(".tab__container");
 
@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
   }
 
   // each click event is scoped to the tab_container
-  function tabClick (event) {
+  function tabClick(event) {
     var scope = event.currentTarget.parentNode;
     var clickedTab = event.target;
     var tabs = getAll('.tab', scope);
@@ -93,8 +93,8 @@ function smoothScrollTo(i, event) {
 }
 
 if (btns.length && sections.length > 0) {
-  for (var i = 0; i<btns.length; i++) {
-    btns[i].addEventListener('click', smoothScrollTo.bind(this,i));
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', smoothScrollTo.bind(this, i));
   }
 }
 
@@ -102,7 +102,7 @@ if (btns.length && sections.length > 0) {
 window.addEventListener('scroll', function () {
   var docNav = get('.doc__nav > ul');
 
-  if( docNav) {
+  if (docNav) {
     if (window.pageYOffset > 63) {
       docNav.classList.add('fixed');
     } else {
@@ -115,7 +115,7 @@ window.addEventListener('scroll', function () {
 var topNav = get('.menu');
 var icon = get('.toggle');
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
   function showNav() {
     if (topNav.className === 'menu') {
       topNav.className += ' responsive';
@@ -127,4 +127,3 @@ window.addEventListener('load', function(){
   }
   icon.addEventListener('click', showNav);
 });
-
