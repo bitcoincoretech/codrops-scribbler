@@ -21,7 +21,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             [0%]...[16%]...[33%]...[50%]...[66%]...[83%]...[99%]...[DONE].
             No coin database inconsistencies in last 6 blocks (14279 transactions)
             New outbound peers connected ₿`;
-  var speed = 60;
+  var speed = 21;
 
   function typeItOut() {
     if (i < txt.length) {
