@@ -20,7 +20,9 @@ if (document.getElementsByClassName('demo').length > 0) {
             Verifying last 6 blocks at level 3
             [0%]...[16%]...[33%]...[50%]...[66%]...[83%]...[99%]...[DONE].
             No coin database inconsistencies in last 6 blocks (14279 transactions)
-            New outbound peers connected ₿`;
+            New outbound peers connected ₿
+            `;
+
   var speed = 21;
 
   function typeItOut() {
